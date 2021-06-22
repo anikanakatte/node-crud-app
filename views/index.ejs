@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Express Mongo</title>
+</head>
+<body>
+    <h1>CRUD EXPRESS MONGO</h1>
+    <form action="/quotes" method="POST">
+        <input type="text" name="name" placeholder="Name">
+        <br>
+        <input type="text" name="quote" placeholder="Quote">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="message"></div>
+    
+    <h2>Quotes</h2>
+    <ul class="quotes">
+        <% for (let i=0; i< quotes.length; i++) {%>
+            <li class="quote">
+                <span><%= quotes[i].name %></span>:
+                <span><%= quotes[i].quote %></span>
+            </li>
+
+        <% } %>
+    </ul>
+
+    <div>
+        <h2>Darth Vader Invades!</h2>
+        <p>Replace Yoda's quote by one written by Darth Vader</p>
+        <button id="update-button">Replace Yoda's quote</button>
+    </div>
+
+    <div>
+        <h2>Delete Darth Vader!</h2>
+        <p>Delete Darth Vader's quotes, does nothing if there are no quotes</p>
+        <button id="delete-button">Delete</button>
+    </div>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
